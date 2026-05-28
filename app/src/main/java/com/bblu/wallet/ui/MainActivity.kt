@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.bblu.wallet.R
 import com.bblu.wallet.databinding.ActivityMainBinding
-import com.bblu.wallet.network.BBLUParameters
+import com.bblu.wallet.network.BBLUNetworkParameters
 import com.bblu.wallet.wallet.BBLUWalletManager
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -17,14 +17,14 @@ class MainActivity : AppCompatActivity() {
     
     private lateinit var binding: ActivityMainBinding
     private lateinit var walletManager: BBLUWalletManager
-    private lateinit var networkParams: BBLUParameters
+    private lateinit var networkParams: BBLUNetworkParameters
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         
-        networkParams = BBLUParameters.get()
+        networkParams = BBLUNetworkParameters.get()
         walletManager = BBLUWalletManager(this, networkParams)
         
         setupUI()

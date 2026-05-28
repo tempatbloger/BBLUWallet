@@ -5,7 +5,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.bblu.wallet.databinding.ActivitySendBinding
-import com.bblu.wallet.network.BBLUParameters
+import com.bblu.wallet.network.BBLUNetworkParameters
 import com.bblu.wallet.wallet.BBLUWalletManager
 import com.journeyapps.barcodescanner.ScanContract
 import com.journeyapps.barcodescanner.ScanOptions
@@ -17,7 +17,7 @@ class SendActivity : AppCompatActivity() {
     
     private lateinit var binding: ActivitySendBinding
     private lateinit var walletManager: BBLUWalletManager
-    private lateinit var networkParams: BBLUParameters
+    private lateinit var networkParams: BBLUNetworkParameters
     
     private val scanLauncher = registerForActivityResult(ScanContract()) { result ->
         if (result.contents != null) {
@@ -30,7 +30,7 @@ class SendActivity : AppCompatActivity() {
         binding = ActivitySendBinding.inflate(layoutInflater)
         setContentView(binding.root)
         
-        networkParams = BBLUParameters.get()
+        networkParams = BBLUNetworkParameters.get()
         walletManager = BBLUWalletManager(this, networkParams)
         
         setupUI()

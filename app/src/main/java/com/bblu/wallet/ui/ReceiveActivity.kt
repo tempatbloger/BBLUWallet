@@ -6,7 +6,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.bblu.wallet.databinding.ActivityReceiveBinding
-import com.bblu.wallet.network.BBLUParameters
+import com.bblu.wallet.network.BBLUNetworkParameters
 import com.bblu.wallet.wallet.BBLUWalletManager
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.MultiFormatWriter
@@ -19,14 +19,14 @@ class ReceiveActivity : AppCompatActivity() {
     
     private lateinit var binding: ActivityReceiveBinding
     private lateinit var walletManager: BBLUWalletManager
-    private lateinit var networkParams: BBLUParameters
+    private lateinit var networkParams: BBLUNetworkParameters
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityReceiveBinding.inflate(layoutInflater)
         setContentView(binding.root)
         
-        networkParams = BBLUParameters.get()
+        networkParams = BBLUNetworkParameters.get()
         walletManager = BBLUWalletManager(this, networkParams)
         
         setupUI()

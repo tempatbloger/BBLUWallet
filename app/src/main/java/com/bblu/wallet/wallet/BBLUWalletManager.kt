@@ -13,7 +13,7 @@ import org.bitcoinj.wallet.DeterministicKeyChain
 import org.bitcoinj.wallet.DeterministicSeed
 import org.bitcoinj.wallet.Wallet
 import org.bitcoinj.wallet.Wallet.BalanceType
-import com.bblu.wallet.network.BBLUParameters
+import com.bblu.wallet.network.BBLUNetworkParameters
 import java.io.File
 import java.security.SecureRandom
 import java.util.*
