@@ -41,3 +41,25 @@
 ```bash
 git clone https://github.com/tempatbloger/BBLUWallet.git
 cd BBLUWallet
+```
+
+## Struktur Project
+```BBLUWallet/
+├── app/
+│   ├── src/main/java/com/bblu/wallet/
+│   │   ├── network/
+│   │   │   └── BBLUNetworkParameters.kt
+│   │   ├── wallet/
+│   │   │   └── BBLUWalletManager.kt
+│   │   ├── electrum/
+│   │   │   └── ElectrumClient.kt
+│   │   ├── ui/
+│   │   │   ├── MainActivity.kt
+│   │   │   ├── SendActivity.kt
+│   │   │   └── ReceiveActivity.kt
+│   │   └── utils/
+│   │       └── QRCodeGenerator.kt
+│   └── res/
+│       └── layout/
+└── build.gradle
+```
